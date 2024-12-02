@@ -1,12 +1,15 @@
-function solution(rny_string) {
-  return rny_string.replace(/m/g, "rn")
+function solution(myString) {
+  return myString
+      .split('x')
+      .filter(el => /[a-zA-Z]/g.test(el))
+      .sort((a, b) => a.localeCompare(b))
 }
-
-// 문자열의 모든 m을 "rn"으로 변경
-// replace는 원본 문자열을 수정하므로 split() + map() + join()이 중간배열을 사용하는 것보다 더 공간 복잡도 측면에서 효율적임.
 
 /**
  * 시간 복잡도
  * 
- * - 전체 : O(n)
+ * - split('x') : O(n)
+ * - filter : O(m * k) (최악 O(n))
+ * - sort : O(m log m) (최악 O(n log n))
+ * - 전체 :  O(n log n)
  */
