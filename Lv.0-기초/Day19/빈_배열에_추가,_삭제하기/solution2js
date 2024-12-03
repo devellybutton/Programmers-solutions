@@ -1,0 +1,25 @@
+// Array.fill, splice 사용
+
+function solution(arr, flag) {
+  let result = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+      if (flag[i]) {
+          // arr[i] * 2만큼 길이의 배열을 생성
+          // 모든 원소는 arr[i]로 채움
+          result.push(...Array.from({ length: arr[i] * 2 }, () => arr[i]))
+      } else {
+          // 만약 길이 8인 배열에서 3개 제거한다고 하면
+          // 인덱스 5, 6, 7을 제거해야 하므로 0부터 4까지 남음
+          result = result.slice(0, result.length - arr[i]) 
+      }
+  }
+  return result;
+}
+
+/**
+ * 시간 복잡도
+ * 
+ * - 전체 : O(n)
+ * - arr[i]가 최대 9로 고정됨. 상수시간.
+ */
