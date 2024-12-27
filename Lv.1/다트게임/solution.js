@@ -11,7 +11,7 @@ function solution(dartResult) {
           // 이전 두 값이 0과 1인 경우 10의 1제곱을 점수로 추가
           if (dartResultArr[i-1] === 0 && dartResultArr[i-2] === 1) {
               score.push(Math.pow(10, 1))
-            // 그 외의 경우는 그냥 직전 숫자 넣기기
+            // 그 외의 경우는 그냥 직전 숫자 넣기
           } else {
               score.push(Math.pow(dartResult[i-1], 1))
           }
