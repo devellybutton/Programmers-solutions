@@ -1,3 +1,5 @@
+// Set 활용
+
 function solution(X, Y) {
   const xArr = X.split('').map(Number);  // X를 각 자릿수로 분리하여 숫자 배열로 변환
   const yArr = Y.split('').map(Number);  // Y를 각 자릿수로 분리하여 숫자 배열로 변환
@@ -38,5 +40,11 @@ function solution(X, Y) {
 }
 
 /**
- * 
+ * 시간복잡도
+ * - X.split('').map(Number), Y.split('').map(Number) : O(n)과 O(m) (n은 x의 길이, m은 y의 길이)
+ * - map1과 map2에 저장하는 반복문 : O(n)과 O(m)
+ * - for문 : O(1)
+ * - answer.split('') : O(n + m)
+ * - 정렬 : O((n + m) log(n + m))
+ * - 전체 : O(n log n)
  */
